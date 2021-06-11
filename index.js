@@ -232,7 +232,7 @@ console.log(artists[8]["name"]);
 function getArtistByIndex(arr, id) {
   return `the artist at index ${id} is ${arr[id]["name"]}`
 }  
-getArtistByIndex(artists, 0);
+// getArtistByIndex(artists, 0);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -262,7 +262,7 @@ function removeArtist(arr, id){
    arr.splice(id,1);
    return arr.length;
 }
-removeArtist(artists, 0);
+// removeArtist(artists, 0);
    
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -281,8 +281,16 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
+function addArtist(arr){
+    arr.push({ 
+      "id": 20,
+      "name": "Alex", 
+      "years": "1999 - 2021",
+      "genre": "Web Design", 
+      "nationality": "American",
+      "bio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti hic eaque aliquam quia omnis deserunt accusamus fugiat aspernatur repellendus id blanditiis adipisci libero, accusantium culpa tempora exercitationem earum? Iste, dolorum."
+    })
+    return arr;
   }
 
   
@@ -294,10 +302,17 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
-}
 
+function lotsOfArt(arr){
+  const names = [];
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i]["paintings"] > 100){
+      names.push(arr[i]["name"]);
+    }
+  }
+  return names;
+}
+lotsOfArt(artists);
 
 
 
